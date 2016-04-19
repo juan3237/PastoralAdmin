@@ -11,6 +11,8 @@ namespace PastoralAdmin
     {
         protected void Application_Start()
         {
+            //aqui huo un cambio
+
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
