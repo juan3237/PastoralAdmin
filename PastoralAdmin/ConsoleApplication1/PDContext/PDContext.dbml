@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DiosecisSPM" Class="PDContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=DiosecisSPM;Integrated Security=True" SettingsObjectName="Pastoral.Data.Properties.Settings" SettingsPropertyName="Pastoral_PruebaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ICategoria" Member="ICategorias">
+    <Type Name="ICategoria">
+      <Column Name="ID_Categoria" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name_Categoria" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Desc_Categoria" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Institucion_ICategoria" Member="Institucion" ThisKey="ID_Categoria" OtherKey="ID_Institucion" Type="Institucion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuario" Member="Usuarios">
+    <Type Name="Usuario">
+      <Column Name="ID_usuario" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name_usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cat_usuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="St_Usuario" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Phone_Usuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Adress_Usuario" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Mail_Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Usuario_Role" Member="Role" ThisKey="ID_usuario" OtherKey="ID_Roles" Type="Role" Cardinality="One" />
+      <Association Name="Mienbro_Usuario" Member="Mienbro" ThisKey="ID_usuario" OtherKey="ID_Miembro" Type="Mienbro" IsForeignKey="true" />
+      <Association Name="UCategoria_Usuario" Member="UCategoria" ThisKey="ID_usuario" OtherKey="ID_UserCategoria" Type="UCategoria" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Institucion" Member="Institucions">
+    <Type Name="Institucion">
+      <Column Name="ID_Institucion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name_Institucion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Cat_Institucion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Adrees_Institucion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Phone_Institucion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Mail_Institucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Institucion_ICategoria" Member="ICategoria" ThisKey="ID_Institucion" OtherKey="ID_Categoria" Type="ICategoria" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Mienbros" Member="Mienbros">
+    <Type Name="Mienbro">
+      <Column Name="ID_Miembro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name_Mienbro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastName_Mienbro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fecha_Nac_Miembro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Fecha_Ingreso_Mienbro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Adress_Mienbro" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ST_Matrimonio" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Mienbro_Usuario" Member="Usuario" ThisKey="ID_Miembro" OtherKey="ID_usuario" Type="Usuario" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roles" Member="Roles">
+    <Type Name="Role">
+      <Column Name="ID_Roles" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name_Roles" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Desc_Roles" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Usuario_Role" Member="Usuario" ThisKey="ID_Roles" OtherKey="ID_usuario" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UCategoria" Member="UCategorias">
+    <Type Name="UCategoria">
+      <Column Name="ID_UserCategoria" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name_UserCategoria" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Desc_UserCategoria" Type="System.Data.Linq.Binary" DbType="VarBinary(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="UCategoria_Usuario" Member="Usuario" ThisKey="ID_UserCategoria" OtherKey="ID_usuario" Type="Usuario" Cardinality="One" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="PDContext">
+  <DataContextMoniker Name="/PDContextDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4d4a1016-91cf-4e9a-a74d-45e91e9ccf44" absoluteBounds="6.5, 5.25, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/PDContextDataContext/ICategoria" />
+      <nestedChildShapes>
+        <elementListCompartment Id="088f3dfc-f47d-4900-ba98-9675fa7c5bf1" absoluteBounds="6.515, 5.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e45523f-ce23-418c-941f-3a3c598c9e82" absoluteBounds="3.5, 0.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PDContextDataContext/Usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c9e45dbe-8248-44ff-8071-0b814f7edbd8" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="335cc987-5f1d-4e2f-b362-2b770099910f" absoluteBounds="3.75, 4.875, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/PDContextDataContext/Institucion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="65774dcb-306f-41b2-9515-3add3fff5ee3" absoluteBounds="3.765, 5.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fb4e01a2-0492-495c-ab02-245618e57e1b" absoluteBounds="0.75, 4.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PDContextDataContext/Mienbro" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0ad0c219-a828-48c0-9c62-ecbdbc0c262d" absoluteBounds="0.765, 5.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2440647a-2d1e-4d6d-bd1f-7ca73b92d17d" absoluteBounds="6.25, 1.375, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/PDContextDataContext/Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf0360f2-b847-401b-b1cc-275c6b833833" absoluteBounds="6.265, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="85bce239-bb8d-4db6-a1c4-cf75abfef32b" absoluteBounds="0.75, 1.375, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/PDContextDataContext/UCategoria" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6535abc-f9eb-4d81-8989-a4ddf1085fef" absoluteBounds="0.765, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.75 : 5.94314697265625); (6.5 : 5.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PDContextDataContext/Institucion/Institucion_ICategoria" />
+      <nodes>
+        <classShapeMoniker Id="335cc987-5f1d-4e2f-b362-2b770099910f" />
+        <classShapeMoniker Id="4d4a1016-91cf-4e9a-a74d-45e91e9ccf44" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.96559895833333); (3.59375 : 6.96559895833333); (3.59375 : 3.03049967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PDContextDataContext/Mienbro/Mienbro_Usuario" />
+      <nodes>
+        <classShapeMoniker Id="fb4e01a2-0492-495c-ab02-245618e57e1b" />
+        <classShapeMoniker Id="3e45523f-ce23-418c-941f-3a3c598c9e82" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.06814697265625); (6.25 : 2.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PDContextDataContext/Usuario/Usuario_Role" />
+      <nodes>
+        <classShapeMoniker Id="3e45523f-ce23-418c-941f-3a3c598c9e82" />
+        <classShapeMoniker Id="2440647a-2d1e-4d6d-bd1f-7ca73b92d17d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.06814697265625); (3.5 : 2.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PDContextDataContext/UCategoria/UCategoria_Usuario" />
+      <nodes>
+        <classShapeMoniker Id="85bce239-bb8d-4db6-a1c4-cf75abfef32b" />
+        <classShapeMoniker Id="3e45523f-ce23-418c-941f-3a3c598c9e82" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
