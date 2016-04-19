@@ -1,2 +1,0 @@
-# PastoralAdmin
-Proyecto de grado
